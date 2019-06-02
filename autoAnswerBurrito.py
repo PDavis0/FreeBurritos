@@ -1,5 +1,6 @@
 import twilio # phone number 
 from texter import textCode
+import IngestChipotleTweets
 
 
 # Chipotle tweets -> grab "@chipotleTweets"s' tweet -> find code -> twilio text 888222
@@ -17,9 +18,8 @@ def findCode(text) :
 
 #seperate file grabbing tweet -> text file "sampleChipotleTweet"
 
-
 #find code
-code = ' '
+code = IngestChipotleTweets.getCode()
 tweet = open('sampleChipotleTweet.txt','r')
 tweetString = tweet.read()
 code = findCode(tweetString)
