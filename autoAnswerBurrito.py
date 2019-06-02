@@ -1,4 +1,5 @@
 import twilio # phone number 
+from texter import textCode
 
 
 # Chipotle tweets -> grab "@chipotleTweets"s' tweet -> find code -> twilio text 888222
@@ -25,5 +26,5 @@ code = findCode(tweetString)
 print(code)
 
 #text code to 888222
-
+textCode(code)
 #seperate file interpretting chipotle texts (forward to our phone number)
