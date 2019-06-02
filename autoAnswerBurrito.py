@@ -27,9 +27,9 @@ def findCode(text) :
 #seperate file grabbing tweet -> text file "sampleChipotleTweet"
 
 #find code
-code = IngestChipotleTweets.getCode()
-tweet = open('sampleChipotleTweet.txt','r')
-tweetString = tweet.read()
+tweetString = IngestChipotleTweets.getCode()
+#tweet = open('sampleChipotleTweet.txt','r')     ...not stored in a text file.
+#tweetString = tweet.read()
 code = findCode(tweetString)
 print(code)
 
