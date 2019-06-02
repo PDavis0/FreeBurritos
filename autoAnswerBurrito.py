@@ -1,8 +1,16 @@
 import twilio # phone number 
 from texter import textCode
-
+import app
 
 # Chipotle tweets -> grab "@chipotleTweets"s' tweet -> find code -> twilio text 888222
+
+#
+# Before running this file, 
+# run ./ngrok http 5000 in terminal
+# run app.py in another terminal
+# update Twilio "when a message comes in" field to be 
+# the ngrok port forwarding address it gives you, with "/sms" appended
+#
 
 def findCode(text) :
     test = text.split()
@@ -26,5 +34,5 @@ code = findCode(tweetString)
 print(code)
 
 #text code to 888222
-textCode(code)
-#seperate file interpretting chipotle texts (forward to our phone number)
+textCode("+1888222",code)
+#reponse forwarding is done by app.py
