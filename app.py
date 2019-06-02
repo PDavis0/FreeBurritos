@@ -12,7 +12,7 @@ def sms():
     message_body = request.form['Body']
     #resp = MessagingResponse()
     #resp.message('Hello {}, you said: {}'.format(number, message_body))
-    textCode("+14403086431",message_body)
+    textCode("+1XXXX",message_body)
     return 'OK'
 
 if __name__ == '__main__':

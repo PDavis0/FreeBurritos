@@ -23,7 +23,7 @@ def findCode(text) :
         counter = counter + 1
     return code
 
-#seperate file grabbing tweet -> text file "sampleChipotleTweet"
+#separate file grabbing tweet -> text file "sampleChipotleTweet"
 
 
 #find code
@@ -32,7 +32,7 @@ tweet = open('sampleChipotleTweet.txt','r')
 tweetString = tweet.read()
 code = findCode(tweetString)
 print(code)
-
-#text code to 888222
-textCode("+1888222",code)
-#reponse forwarding is done by app.py
+if code != "Could not find code" :
+    #text code to 888222
+    textCode("+1888222",code)
+    #reponse forwarding is done by app.py
