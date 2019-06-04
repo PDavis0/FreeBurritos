@@ -2,24 +2,13 @@ import tweepy
 
 #im an idiot - Parker
 #we need to create an code class w/ a code parameter. That eliminates this global variable stuff
-globalCodeVariable = " "
-
-def setCode(code):
-    globalCode=code
-
-def getCode():
-    return globalCodeVariable
 
 #override tweepy.StreamListener, adding logic to on_status
 class MyStreamListener(tweepy.StreamListener):
     def on_status(self, status):
-        
-        #kinda set the code 2 ways... no time to check.. gotta golf
-        globalCodeVariable = status.text
-        
-        setCode(status.text)
-
-        print(status.text)
+        store_tweet_filename = "chipotleTweetsTweet.txt"
+        with open(store_tweet_filename,'w') as tf:
+                tf.write(status.text)
 
 
 
@@ -40,6 +29,7 @@ api = tweepy.API(auth)
 myStreamListener = MyStreamListener()
 myStream = tweepy.Stream(auth = api.auth, listener=myStreamListener)
 myStream.filter(follow=['141341662'])
+
 
 
 

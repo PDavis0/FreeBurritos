@@ -1,6 +1,5 @@
-import twilio # phone number 
+import twilio 
 from texter import textCode
-import IngestChipotleTweets
 import app
 
 # Chipotle tweets -> grab "@chipotleTweets"s' tweet -> find code -> twilio text 888222
@@ -24,15 +23,13 @@ def findCode(text) :
         counter = counter + 1
     return code
 
-#seperate file grabbing tweet -> text file "sampleChipotleTweet"
+#just keeps running checking for new codes
+while(True):
+    tweet = open('chipotTweetsTweet.txt','r')
+    tweetString = tweet.read(tweet)
+    code = findCode(tweetString)
+    print(code)
 
-#find code
-tweetString = IngestChipotleTweets.getCode()
-#tweet = open('sampleChipotleTweet.txt','r')     ...not stored in a text file.
-#tweetString = tweet.read()
-code = findCode(tweetString)
-print(code)
-
-#text code to 888222
-textCode("+1888222",code)
-#reponse forwarding is done by app.py
+    #text code to 888222
+    textCode("+1888222",code)
+    #reponse forwarding is done by app.py
