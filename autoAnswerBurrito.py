@@ -23,26 +23,16 @@ def findCode(text) :
         counter = counter + 1
     return code
 
-<<<<<<< HEAD
-#separate file grabbing tweet -> text file "sampleChipotleTweet"
-
-
-#find code
-code = ' '
-tweet = open('sampleChipotleTweet.txt','r')
-tweetString = tweet.read()
-code = findCode(tweetString)
-print(code)
-if code != "Could not find code" :
-=======
 #just keeps running checking for new codes
+code = 'start'
+oldCode = 'again'
 while(True):
     tweet = open('chipotTweetsTweet.txt','r')
     tweetString = tweet.read(tweet)
     code = findCode(tweetString)
     print(code)
-
->>>>>>> b9941b014f78c355a0d97382125e107e29a4f477
-    #text code to 888222
-    textCode("+1888222",code)
-    #reponse forwarding is done by app.py
+    if code != oldCode:
+        #text code to 888222
+        textCode("+1888222",code)
+        #reponse forwarding is done by app.py
+        oldCode = code
